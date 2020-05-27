@@ -1,5 +1,5 @@
 # auto-bind
-[![deno](https://img.shields.io/badge/deno-161e2e?style=flat-square&logo=deno)](https://deno.land/x/auto-bind)
+[![deno](https://img.shields.io/badge/deno-161e2e?style=flat-square&logo=deno)](https://deno.land/x/auto_bind)
 [![license](https://img.shields.io/github/license/jgchk/auto-bind?style=flat-square)](https://choosealicense.com/licenses/gpl-3.0/)
 
 automatically bind methods to their class instance :star2::sparkles:
@@ -7,13 +7,13 @@ automatically bind methods to their class instance :star2::sparkles:
 ## import
 
 ```javascript
-import autoBind from "https://deno.land/x/auto-bind/mod.ts";
+import autoBind from "https://deno.land/x/auto_bind/mod.ts";
 ```
 
 ## usage
 
 ```javascript
-import autoBind from "https://deno.land/x/auto-bind/mod.ts";
+import autoBind from "https://deno.land/x/auto_bind/mod.ts";
 
 class Foo {
   bar: string;
