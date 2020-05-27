@@ -1,92 +1,39 @@
-# auto-bind [![Build Status](https://travis-ci.org/sindresorhus/auto-bind.svg?branch=master)](https://travis-ci.org/sindresorhus/auto-bind)
+# auto-bind
+[![deno](https://img.shields.io/badge/deno-161e2e?style=flat-square&logo=deno)](https://deno.land/x/auto-bind)
+[![license](https://img.shields.io/github/license/jgchk/auto-bind?style=flat-square)](https://choosealicense.com/licenses/gpl-3.0/)
 
-> Automatically bind methods to their class instance
+automatically bind methods to their class instance :star2::sparkles:
 
-It also correctly binds inherited properties.
+## import
 
-## Install
-
+```javascript
+import autoBind from "https://deno.land/x/auto-bind/mod.ts";
 ```
-$ npm install auto-bind
-```
 
-## Usage
+## usage
 
-```js
-const autoBind = require('auto-bind');
+```javascript
+import autoBind from "https://deno.land/x/auto-bind/mod.ts";
 
-class Unicorn {
-	constructor(name) {
-		this.name = name;
-		autoBind(this);
-	}
+class Foo {
+  constructor(bar: string) {
+    this.bar = bar;
+    autoBind(this);
+  }
 
-	message() {
-		return `${this.name} is awesome!`;
-	}
+  message() {
+    return `foo ${this.bar}`
+  }
 }
 
-const unicorn = new Unicorn('Rainbow');
+const foo = new Foo('bar');
+const message = foo.message;
 
-// Grab the method off the class instance
-const message = unicorn.message;
-
-// Still bound to the class instance
-message();
-//=> 'Rainbow is awesome!'
-
-// Without `autoBind(this)`, the above would have resulted in
-message();
-//=> Error: Cannot read property 'name' of undefined
+message(); // with autoBind -> 'foo bar'
+           // without autoBind -> TypeError: Cannot read property 'bar' of undefined
 ```
 
-## API
-
-### autoBind(self, options?)
-
-Bind methods in `self` to their class instance.
-
-Returns the `self` object.
-
-#### self
-
-Type: `object`
-
-Object with methods to bind.
-
-#### options
-
-Type: `object`
-
-##### include
-
-Type: `Array<string | RegExp>`
-
-Bind only the given methods.
-
-##### exclude
-
-Type: `Array<string | RegExp>`
-
-Bind methods except for the given methods.
-
-### React
-
-Same as `autoBind`, but excludes the default [React component methods](https://reactjs.org/docs/react-component.html).
-
-```js
-const autoBindReact = require('auto-bind/react');
-
-class Foo extends React.Component {
-	constructor(props) {
-		super(props);
-		autoBindReact(this);
-	}
-
-	// …
-}
-```
-
-## Related
-
-- [bind-methods](https://github.com/sindresorhus/bind-methods) - Bind all methods in an object to itself or a specified context
+## contributing
+- pull requests are welcome!
+- for major changes, open an issue first to discuss what you would like to change
+- update tests as appropriate
