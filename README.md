@@ -7,13 +7,13 @@ automatically bind methods to their class instance :star2::sparkles:
 ## import
 
 ```javascript
-import autoBind from "https://deno.land/x/auto_bind/mod.ts";
+import autoBind from "https://deno.land/x/auto_bind/src/mod.ts";
 ```
 
 ## usage
 
 ```javascript
-import autoBind from "https://deno.land/x/auto_bind/mod.ts";
+import autoBind from "https://deno.land/x/auto_bind/src/mod.ts";
 
 class Foo {
   bar: string;
