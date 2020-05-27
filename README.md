@@ -16,21 +16,23 @@ import autoBind from "https://deno.land/x/auto-bind/mod.ts";
 import autoBind from "https://deno.land/x/auto-bind/mod.ts";
 
 class Foo {
+  bar: string;
+
   constructor(bar: string) {
     this.bar = bar;
     autoBind(this);
   }
 
   message() {
-    return `foo ${this.bar}`
+    return `foo ${this.bar}`;
   }
 }
 
-const foo = new Foo('bar');
+const foo = new Foo("bar");
 const message = foo.message;
 
-message(); // with autoBind -> 'foo bar'
-           // without autoBind -> TypeError: Cannot read property 'bar' of undefined
+console.log(message()); // with autoBind -> 'foo bar'
+                        // without autoBind -> TypeError: Cannot read property 'bar' of undefined
 ```
 
 ## contributing
