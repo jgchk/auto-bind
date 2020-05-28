@@ -2,7 +2,7 @@
 [![deno](https://img.shields.io/badge/deno-161e2e?style=flat-square&logo=deno)](https://deno.land/x/auto_bind)
 [![license](https://img.shields.io/github/license/jgchk/auto-bind?style=flat-square)](https://choosealicense.com/licenses/gpl-3.0/)
 
-automatically bind methods to their class instance :star2::sparkles:
+automatically bind methods to their class instance 🌟✨
 
 ## import
 
